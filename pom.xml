@@ -5,7 +5,7 @@
     <artifactId>my-project</artifactId>
     <name>My Project</name>
     <version>1.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
 
     <properties>
         <java.version>11</java.version>
@@ -225,6 +225,15 @@
                     <groupId>com.vaadin</groupId>
                     <artifactId>flow-server-production-mode</artifactId>
                 </dependency>
+                <dependency>
+                    <groupId>com.heroku.sdk</groupId>
+                    <artifactId>heroku-maven-plugin</artifactId>
+                    <version>3.0.4</version>
+                </dependency>
+                <dependency>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-actuator</artifactId>
+                </dependency>
             </dependencies>
 
             <build>
@@ -252,9 +261,10 @@
                     <plugin>
                         <groupId>com.heroku.sdk</groupId>
                         <artifactId>heroku-maven-plugin</artifactId>
-                        <version>3.0.3</version>
+                        <version>3.0.4</version>
                         <configuration>
                             <appName>vaadincrm</appName>
+                            <jdkVersion>11</jdkVersion>
                         </configuration>
                     </plugin>
                 </plugins>
